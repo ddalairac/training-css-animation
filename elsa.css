@@ -1,0 +1,69 @@
+
+.elsa-cont{
+    position: relative;
+    margin: 100px auto;
+    width: 60vw;
+    height: 60vw;
+    max-width: 60vh;
+    max-height: 60vh;
+
+}
+.bg{
+    background-image: linear-gradient(#f24b21, #f7b21e);
+}
+.mask {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.mask img {
+    width: 130%;
+    height: 130%;
+    position: absolute;
+    top: -15%;
+    left: -15%;
+}
+img.elsa_surf{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    width: 85%;
+    /* animacion*/
+    animation-name: elsa;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out
+}
+/* The element to apply the animation to */
+@keyframes elsa {
+    0%   {top: 25%;transform: rotate(-7deg);}
+    25%  {top: 28%;}
+    50%  {top: 25%;transform: rotate(7deg);}
+    75%  {top: 28%;}
+    100% {top: 25%;transform: rotate(-7deg);}
+}
+.ola_dark_1,
+.ola_dark_2,
+.ola_light_1,
+.ola_light_2,
+.ola_light_3{
+    animation-name: ola;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.ola_dark_1{ animation-duration: 3.9s;}
+.ola_dark_2{ animation-duration: 3s;}
+.ola_light_1{ animation-duration: 3.7s;}
+.ola_light_2{ animation-duration: 3.5s;}
+.ola_light_3{ animation-duration: 3.3s;}
+
+@keyframes ola {
+    0%   {top: -15%;left: -15%;}
+    33%  {left: -10%;}
+    50%  {top: -10%;}
+    100% {top: -15%;left: -15%;}
+}
+

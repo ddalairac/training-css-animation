@@ -1,0 +1,49 @@
+.cont {
+    margin: 50px auto;
+    max-width: 250px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 40px;
+    border: 1px solid #CCC;
+    text-align: center;
+}
+button{
+    padding: 8px;
+    border-radius: 40px;
+    border:none;
+    color: white;
+    background: #494f51;
+    transition: background 1s;
+}
+button:hover{
+    background: #e50413;
+}
+input:focus,
+button:focus{
+    outline:none;
+}
+
+@keyframes keyframes_shake_field {
+    from { border-color: red; }
+    to {
+        transform: translate3d(0, 0, 0);
+        border-color: #CCC;
+    }
+    10%,30%,50%,70%,90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+    20%,40%,60%,80% {
+        transform: translate3d(5px, 0, 0);
+    }
+}
+.shake_field {
+    animation-duration: 0.5s;
+    animation-name: keyframes_shake_field;
+    animation-timing-function: ease-in-out;
+}

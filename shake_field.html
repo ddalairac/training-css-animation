@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shake_field.css">
+    <title>shake field</title>
+</head>
+
+<body>
+    <div class="cont">
+        <input type="text" id="field" >
+        <button id="confirm" type="submit">Aceptar</button>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("confirm")
+    var field = document.getElementById("field")
+
+    btn.addEventListener("click", () => {
+        console.log("btn")
+        field.classList.add('shake_field')
+        setTimeout(() => {
+            field.classList.remove("shake_field");
+            field.value = ""
+        }, 500);
+    });
+</script>
+
+</html>
