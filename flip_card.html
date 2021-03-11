@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/flip_card.css">
+    <title>Flip card</title>
+</head>
+
+<body>
+    <div class="cont">
+
+        <div class="card">
+            <div class="card-front">
+                <img src="assets/img/dni-frente.svg" alt="dni frente">
+            </div>
+            <div class="card-back">
+                <img src="assets/img/dni-dorso.svg" alt="dni dorso">
+            </div>
+        </div>
+
+        <button id="flip" type="submit">Flip</button>
+    </div>
+</body>
+<script>
+    var card = document.querySelector(".card")
+    var btn = document.getElementById("flip")
+
+    btn.addEventListener("click", () => {
+        console.log("card", card.classList)
+        if (card.classList.contains("card-flip")) {
+            card.classList.remove("card-flip");
+        } else {
+            card.classList.add('card-flip')
+        }
+    });
+</script>
+
+</html>
