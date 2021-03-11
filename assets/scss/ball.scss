@@ -1,0 +1,103 @@
+.cont{
+    justify-content: space-evenly;
+    flex-direction: row;
+    max-width: 700px;
+    border-bottom: 1px solid #ccc;
+    height: 540px;
+    .ball-cont{
+        width: 100px;
+        position: relative;
+    }
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    background: #e50413;
+    border-radius: 50%;
+    position: absolute;
+
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+$easeIn: cubic-bezier(0.6, 0, 1, 1);
+$easeOut: cubic-bezier(0, 0, 0.6, 1);
+
+$bottom: 450px;
+@keyframes ball_linear{
+    0% {
+        top: 0;
+        animation-timing-function: linear;
+    }
+    50% {
+        top: $bottom;
+        animation-timing-function: linear;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes ball_easing {
+    0% {
+        top: 0;
+        animation-timing-function: ease-in;
+    }
+    50% {
+        top: $bottom;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes ball_easing_custom {
+    0% {
+        top: 0;
+        animation-timing-function: $easeIn;
+    }
+    50% {
+        top: $bottom;
+        animation-timing-function: $easeOut;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes ball_squash {
+    0%,100% {
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+        animation-timing-function: $easeIn;
+    }
+    47%,53%  {
+        top: 430px; /*base-20*/
+        height: 120px;/*base+20*/
+        left: 5px;/* + extra de ancho / 2*/
+        width: 90px;/* ancho - 20*/
+        animation-timing-function: $easeOut;
+    }
+    50% {
+        top: 470px; /*base+20*/
+        height: 80px;/*base-20*/
+        left: -10px;/* - extra de ancho / 2*/
+        width: 120px;/* ancho + 20*/
+        animation-timing-function: $easeIn;
+    }
+}
+
+
+.ball-linear{
+    animation-name: ball_linear;
+}
+.ball-easing{
+    animation-name: ball_easing;
+}
+.ball-easing-custom{
+    animation-name: ball_easing_custom;
+}
+.ball-squash{
+    animation-name: ball_squash;
+}
