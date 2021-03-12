@@ -9,19 +9,25 @@
   width: 100px;
   position: relative;
 }
+.cont .ball-cont p {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: larger;
+}
 
 .ball {
   width: 100px;
   height: 100px;
   background: #e50413;
   border-radius: 50%;
-  position: absolute;
-  animation-duration: 1s;
+  position: relative;
+  animation-duration: 1.1s;
   animation-iteration-count: infinite;
 }
 
 @keyframes ball_linear {
-  0% {
+  0%, 100% {
     top: 0;
     animation-timing-function: linear;
   }
@@ -29,12 +35,9 @@
     top: 450px;
     animation-timing-function: linear;
   }
-  100% {
-    top: 0;
-  }
 }
 @keyframes ball_easing {
-  0% {
+  0%, 100% {
     top: 0;
     animation-timing-function: ease-in;
   }
@@ -42,21 +45,15 @@
     top: 450px;
     animation-timing-function: ease-out;
   }
-  100% {
-    top: 0;
-  }
 }
 @keyframes ball_easing_custom {
-  0% {
+  0%, 100% {
     top: 0;
-    animation-timing-function: cubic-bezier(0.6, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
   }
   50% {
     top: 450px;
-    animation-timing-function: cubic-bezier(0, 0, 0.6, 1);
-  }
-  100% {
-    top: 0;
+    animation-timing-function: cubic-bezier(0, 0, 0.3, 1);
   }
 }
 @keyframes ball_squash {
@@ -65,7 +62,7 @@
     left: 0;
     height: 100px;
     width: 100px;
-    animation-timing-function: cubic-bezier(0.6, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
   }
   47%, 53% {
     top: 430px;
@@ -76,7 +73,7 @@
     /* + extra de ancho / 2*/
     width: 90px;
     /* ancho - 20*/
-    animation-timing-function: cubic-bezier(0, 0, 0.6, 1);
+    animation-timing-function: cubic-bezier(0, 0, 0.3, 1);
   }
   50% {
     top: 470px;
@@ -87,7 +84,7 @@
     /* - extra de ancho / 2*/
     width: 120px;
     /* ancho + 20*/
-    animation-timing-function: cubic-bezier(0.6, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
   }
 }
 .ball-linear {
