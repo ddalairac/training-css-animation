@@ -6,12 +6,7 @@
   max-width: 60vh;
   max-height: 60vh;
 }
-
-.bg {
-  background-image: linear-gradient(#f24b21, #f7b21e);
-}
-
-.mask {
+.elsa-cont .mask {
   position: absolute;
   top: 0;
   overflow: hidden;
@@ -19,8 +14,10 @@
   height: 100%;
   border-radius: 50%;
 }
-
-.mask img {
+.elsa-cont .mask.bg {
+  background-image: linear-gradient(#f24b21, #f7b21e);
+}
+.elsa-cont .mask img {
   width: 130%;
   height: 130%;
   position: absolute;
@@ -28,7 +25,9 @@
   left: -15%;
 }
 
-img.elsa_surf {
+/* elsa */
+/* ****************************************** */
+.elsa_surf {
   position: absolute;
   top: 25%;
   left: 20%;
@@ -47,38 +46,40 @@ img.elsa_surf {
     transform: rotate(7deg);
   }
 }
-.ola_dark_1,
-.ola_dark_2,
-.ola_light_1,
-.ola_light_2,
-.ola_light_3 {
-  animation-name: ola;
+/* waves */
+/* ****************************************** */
+.wave_dark_1,
+.wave_dark_2,
+.wave_light_1,
+.wave_light_2,
+.wave_light_3 {
+  animation-name: wave;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
-.ola_dark_1 {
+.wave_dark_1 {
   animation-duration: 3.9s;
 }
 
-.ola_dark_2 {
+.wave_dark_2 {
   animation-duration: 3s;
 }
 
-.ola_light_1 {
+.wave_light_1 {
   animation-duration: 3.7s;
 }
 
-.ola_light_2 {
+.wave_light_2 {
   animation-duration: 3.5s;
 }
 
-.ola_light_3 {
+.wave_light_3 {
   animation-duration: 3.3s;
 }
 
-@keyframes ola {
-  0% {
+@keyframes wave {
+  0%, 100% {
     top: -15%;
     left: -15%;
   }
@@ -88,9 +89,36 @@ img.elsa_surf {
   50% {
     top: -10%;
   }
+}
+/* bubble */
+/* ****************************************** */
+.bubble {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 7vh;
+  width: 100%;
+  display: block;
+  animation: bubble_move 2s infinite;
+}
+.bubble:before {
+  background: #01e1ff;
+  border-radius: 50%;
+  height: 7vh;
+  width: 7vh;
+  display: block;
+  content: "";
+  animation: bubble_size 2s infinite;
+}
+
+@keyframes bubble_move {
   100% {
-    top: -15%;
-    left: -15%;
+    transform: rotate(180deg);
+  }
+}
+@keyframes bubble_size {
+  60% {
+    transform: scale(0, 0);
   }
 }
 

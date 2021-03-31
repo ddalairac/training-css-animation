@@ -5,26 +5,30 @@
     height: 60vw;
     max-width: 60vh;
     max-height: 60vh;
+
+    .mask {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        &.bg {
+            background-image: linear-gradient(#f24b21, #f7b21e);
+        }
+        img {
+            width: 130%;
+            height: 130%;
+            position: absolute;
+            top: -15%;
+            left: -15%;
+        }
+    }
 }
-.bg {
-    background-image: linear-gradient(#f24b21, #f7b21e);
-}
-.mask {
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-.mask img {
-    width: 130%;
-    height: 130%;
-    position: absolute;
-    top: -15%;
-    left: -15%;
-}
-img.elsa_surf {
+
+/* elsa */
+/* ****************************************** */
+.elsa_surf {
     position: absolute;
     top: 25%;
     left: 20%;
@@ -42,40 +46,37 @@ img.elsa_surf {
         transform: rotate(7deg);
     }
 }
-// @keyframes elsa {
-//     0%   {top: 25%;transform: rotate(-7deg);}
-//     25%  {top: 28%;}
-//     50%  {top: 25%;transform: rotate(7deg);}
-//     75%  {top: 28%;}
-//     100% {top: 25%;transform: rotate(-7deg);}
-// }
-.ola_dark_1,
-.ola_dark_2,
-.ola_light_1,
-.ola_light_2,
-.ola_light_3 {
-    animation-name: ola;
+
+/* waves */
+/* ****************************************** */
+.wave_dark_1,
+.wave_dark_2,
+.wave_light_1,
+.wave_light_2,
+.wave_light_3 {
+    animation-name: wave;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
-.ola_dark_1 {
+.wave_dark_1 {
     animation-duration: 3.9s;
 }
-.ola_dark_2 {
+.wave_dark_2 {
     animation-duration: 3s;
 }
-.ola_light_1 {
+.wave_light_1 {
     animation-duration: 3.7s;
 }
-.ola_light_2 {
+.wave_light_2 {
     animation-duration: 3.5s;
 }
-.ola_light_3 {
+.wave_light_3 {
     animation-duration: 3.3s;
 }
 
-@keyframes ola {
-    0% {
+@keyframes wave {
+    0%,
+    100% {
         top: -15%;
         left: -15%;
     }
@@ -85,8 +86,49 @@ img.elsa_surf {
     50% {
         top: -10%;
     }
-    100% {
-        top: -15%;
-        left: -15%;
+}
+/* bubble */
+/* ****************************************** */
+$bubbleSize: 7vh;
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: $bubbleSize;
+    width: 100%;
+    display: block;
+    animation: bubble_move 2s infinite;
+    
+    &:before {
+        background: #01e1ff;
+        border-radius: 50%;
+        height: $bubbleSize;
+        width: $bubbleSize;
+        display: block;
+        content: "";
+        animation: bubble_size 2s infinite;
     }
 }
+
+@keyframes bubble_move {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes bubble_size {
+    60% {
+        transform: scale(0, 0);
+    }
+}
+
+// @for $i from 1 through 100 {
+//     .bubble:nth-child(#{$i}) {
+//         $size: random(30) + px;
+//         height: $size;
+//         width: $size;
+//         animation-delay: -$i * 0.2s;
+//         transform: translate3d((random(1000) * 1px), (random(1000) * 1px), (random(2000) * 1px));
+//         background: hsl(random(360), 70%, 50%);
+//     }
+// }
